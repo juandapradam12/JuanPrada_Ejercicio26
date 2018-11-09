@@ -80,46 +80,6 @@ int contador(char* filename, char* cuenta, char* tiempo)
 	return 0;
 }
 
-void divideString(char *filename, int n) 
-{ 
-
-	FILE *fp;
-	char str[MAXCHAR];
-	fp = fopen(filename, "r");
-
-	if (fp == NULL)
-	{
-		printf("Could not open file %s",filename);
-	}
-
-	while (fgets(str, MAXCHAR, fp) != NULL)
-		/*printf("%s", str);*/
-		printf("Could open file %s",filename);
-
-	int str_size = strlen(str); 
-	int i; 
-	int part_size; 
-	  
-	/*Check if string can be divided in n equal parts*/ 
-	if (str_size % n != 0) 
-	{ 
-	    printf("Invalid Input: String size"); 
-	    printf(" is not divisible by n"); 
-	} 
-	  
-	/*Calculate the size of parts to find the division points*/ 
-	part_size = str_size / n; 
-
-	char files[n];
-
-	for (i = 0; i < str_size; i++) 
-	{ 
-	    if (i % part_size == 0)   
-	    	printf("%c", str[i]);
-	} 
-	
-} 
-
 int main(int argc, char *argv[])
 {
 	char* filename = argv[1];
@@ -127,7 +87,7 @@ int main(int argc, char *argv[])
 	char* tiempo = argv[3];
 
 	contador(filename, cuenta, tiempo);
-	divideString(filename, 10);
+	divideString(filename, 2);
 	
 }
 
